@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Management App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
+  </head>
+  <body class="bd">
+    <div class="main">
+      <h1>File Management App</h1>
+      <div class="upload">
+        <h2>Upload a File</h2>
+        <form id="upload_file_form" enctype="multipart/form-data">
+          <label for="email">Email:</label>
+          <input type="email" name="email" required /><br /><br />
+          <label for="filename">Filename:</label>
+          <input type="text" name="filename" required /><br /><br />
+          <input type="file" name="file" required /><br /><br />
+          <input type="submit" value="Upload" />
+        </form>
+      </div>
+      <div class="search">
+        <h2>Search for a File</h2>
+        <form action="/search" method="POST">
+          <label for="email">Email:</label>
+          <input type="email" name="email" required /><br /><br />
+          <label for="query">Search Query:</label>
+          <input type="text" name="query" required /><br /><br />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+    </div>
+    <!-- Loading spinner HTML element -->
+    <div id="loading-spinner">
+      <!-- You can use any loading spinner HTML/CSS here -->
+      <div class="spinner"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </body>
+</html>

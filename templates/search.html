@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Results</title>
+  </head>
+  <body>
+    <h1>Search Results</h1>
+
+    <ul>
+      {% for result in results %}
+      <li>
+        <a href="{{ result['download_url'] }}" target="_blank"
+          >{{ result['file_name'] }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
