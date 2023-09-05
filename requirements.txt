@@ -13,3 +13,4 @@ s3transfer
 six
 urllib3
 Werkzeug
+gunicorn
